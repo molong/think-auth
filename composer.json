@@ -1,6 +1,6 @@
 {
     "name": "ycgpp/think-auth",
-    "description": "thinkphp",
+    "description": "thinkphp权限类",
     "type": "library",
     "license": "Apache-2.0",
     "authors": [
