@@ -1,0 +1,13 @@
+{
+    "name": "ycgpp/think-auth",
+    "description": "thinkphp",
+    "type": "library",
+    "license": "apache2.0",
+    "authors": [
+        {
+            "name": "molong",
+            "email": "ycgpp@126.com"
+        }
+    ],
+    "require": {}
+}
