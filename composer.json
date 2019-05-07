@@ -2,7 +2,7 @@
     "name": "ycgpp/think-auth",
     "description": "thinkphp",
     "type": "library",
-    "license": "apache2.0",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "molong",
