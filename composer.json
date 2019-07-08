@@ -3,6 +3,7 @@
     "description": "thinkphp权限类",
     "type": "library",
     "license": "Apache-2.0",
+    "version": "1.1.0",
     "authors": [
         {
             "name": "molong",
@@ -11,10 +12,10 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4"
+        "php": ">=7.0"
     },
     "require-dev": {
-        "php": ">=5.4"
+        "php": ">=7.0"
     },
     "autoload": {
         "psr-4": {
