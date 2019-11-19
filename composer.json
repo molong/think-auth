@@ -1,24 +1,28 @@
 {
-    "name": "ycgpp/think-auth",
-    "description": "thinkphp权限类",
+    "name": "sent/think-auth",
+    "description": "thinkphp 权限类",
     "type": "library",
     "license": "Apache-2.0",
     "version": "1.1.0",
     "authors": [
-        {
-            "name": "molong",
-            "email": "ycgpp@126.com"
-        }
-    ],
+    {
+        "name": "molong",
+        "email": "ycgpp@126.com"
+    }],
     "minimum-stability": "stable",
-    "require": {
+    "require":
+    {
+        "php": ">=7.0",
+        "topthink/framework": "^6.0.0"
+    },
+    "require-dev":
+    {
         "php": ">=7.0"
     },
-    "require-dev": {
-        "php": ">=7.0"
-    },
-    "autoload": {
-        "psr-4": {
+    "autoload":
+    {
+        "psr-4":
+        {
             "sent\\auth\\": "src/"
         }
     }
