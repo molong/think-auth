@@ -168,7 +168,8 @@ class Auth{
 		if (isset($_authList[$uid.$t])) {
 			return $_authList[$uid.$t];
 		}
-		if( $this->_config['auth_type']==2 && isset(Cache::get('_auth_list_' . $uid . $t))){
+		$auth_list = Cache::get('_auth_list_' . $uid . $t);
+		if( $this->_config['auth_type']==2 && $auth_list){
 			return Cache::get('_auth_list_' . $uid . $t);
 		}
 
@@ -183,12 +184,16 @@ class Auth{
 			$_authList[$uid.$t] = array();
 			return array();
 		}
-
+		
 		$map=array(
-			'id'=>array('in',$ids),
-			'type'=>$type,
-			'status'=>1,
+			['id', 'IN', $ids],
+			['status', '=', 1]
 		);
+		if(is_array($type)){
+			$map[] = ['type', 'IN', $type];
+		}else{
+			$map[] = ['type', '=', $type];
+		}
 		//读取用户组所有权限规则
 		$rules = Db::name($this->_config['auth_rule'])->where($map)->field('condition,name')->select();
 
@@ -223,7 +228,7 @@ class Auth{
 	protected function getUserInfo($uid) {
 		static $userinfo=array();
 		if(!isset($userinfo[$uid])){
-			$userinfo[$uid] = Db::name($this->_config['auth_user'])->where(array('uid'=>$uid))->find();
+			$userinfo[$uid] = Db::name($this->_config['auth_user'])->where("uid", $uid)->find();
 		}
 		return $userinfo[$uid];
 	}
